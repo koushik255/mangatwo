@@ -25,13 +25,23 @@ export function scanManga() {
       continue;
     }
 
-    const files = readdirSync(imagesDir)
-      .filter((f) => /\.(webp|png|jpg|jpeg)$/i.test(f))
-      .sort((a, b) => {
-        const numA = parseInt(a.match(/\d+/g)?.pop() || "0");
-        const numB = parseInt(b.match(/\d+/g)?.pop() || "0");
-        return numA - numB;
-      });
+    const allFiles = readdirSync(imagesDir)
+      .filter((f) => /\.(webp|png|jpg|jpeg)$/i.test(f));
+
+    const fileMap = new Map<string, string>();
+    for (const f of allFiles) {
+      const baseName = f.replace(/\.(webp|png|jpg|jpeg)$/i, "").toLowerCase();
+      const existing = fileMap.get(baseName);
+      if (!existing || f.endsWith(".webp")) {
+        fileMap.set(baseName, f);
+      }
+    }
+
+    const files = Array.from(fileMap.values()).sort((a, b) => {
+      const numA = parseInt(a.match(/\d+/g)?.pop() || "0");
+      const numB = parseInt(b.match(/\d+/g)?.pop() || "0");
+      return numA - numB;
+    });
 
     if (files.length === 0) {
       console.log(`Skipping ${volume.name}: no image files`);
