@@ -1,17 +1,20 @@
 import { Elysia } from "elysia";
 import { scanManga, getVolumes, getPage } from "./scanner";
-import { staticPlugin } from "@elysiajs/static";
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
 
 const MANGA_DIR = process.env.MANGA_DIR || "/root/vagabond/VAGABOND";
 const PORT = parseInt(process.env.PORT || "3000");
 
 const app = new Elysia()
-  .use(
-    staticPlugin({
-      assets: MANGA_DIR,
-      prefix: "/images",
-    })
-  )
+  .get("/images/*", ({ params }) => {
+    const filePath = join(MANGA_DIR, params["*"]);
+    if (!existsSync(filePath)) {
+      return new Response("Not found", { status: 404 });
+    }
+    const file = Bun.file(filePath);
+    return new Response(file);
+  })
   .get("/api/volumes", () => getVolumes())
   .get("/api/volumes/:volume/pages/:page", ({ params }) => {
     const volume = parseInt(params.volume);
