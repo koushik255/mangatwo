@@ -1,0 +1,55 @@
+ok, so what if i had something which basiclaly you set it up in a vps
+it would donwload the torrent episode or whatever and then you would be able to stream the video 
+back to your computer,and then you could just watch it and then when the torrent complete you can delete it,
+
+
+ok it would connect to a vps and for this example you would have 1 show on the vps at a time
+then when you would want to watch the show it would start streaming it from vps to the site but it would all 
+be hosted on the vps so it would be very quick right? 
+
+cause i really could care less about code nowadays dude  
+ok i should set up anki tbf
+
+
+so vps would be running like low but then when it gets a request/password is correct when user logs in
+it has the site their so its chill but also 
+it would then just locally stream the video from like computer to web
+yeah the back/front end would just stream the video, and you would have it running on your vps,/domain
+
+but why would somebody not just stream it, i really should just delve into video streaming instead of database
+stuff because at least with video stremaing and all this bs its stuff in place wtvr besides the point
+
+ok so i either make a manga site or i do this, manga site it aucallty way easier and i just have to scale it 
+i could do manga site first then do that 
+
+learn how to turn my stuff on computer into links
+ok so that is very possible so that good
+
+ok so instead of hosting stuff on the cloud i could do it 
+locally on my computer and then make it so that the vps would be able to access 
+that file base/ ssh into it becuase it would be serving those images 
+and then like first i could just work on getting like the top 5 manga on mal but then i could like 
+keep expanding and expanding and honeslty since most people just want to read the most popular ones of 
+all time we dont need to have every single manga of all time since idgaf about those people
+then from their 
+
+ok so plan
+
+for now i guess i can just have the files in the vps 
+but ok 
+have the files globaly served
+also host a frontend from the vps and backedn 
+then you would just be able to view the manga on the site pretty fine 
+then instead of using something like convex i could have the manga which is being read in readis and then 
+the rest in sqlite, but thats alot maybe not just have sqlite for now tbh
+
+
+
+ok thats a good step to do tommorow, becuase im acuallty done with bs like cloudflare when stuff like that is 
+totally unnesscarty for my scale
+
+
+http://143.198.47.186/vagabond_1/images/Vagabond%20v01%20002-003.webp
+works
+
+

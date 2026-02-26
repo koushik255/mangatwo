@@ -1,0 +1,13 @@
+{
+  "name": "manga-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --watch run src/index.ts"
+  },
+  "dependencies": {
+    "elysia": "^1.1.23",
+    "@elysiajs/static": "^1.1.1"
+  }
+}
