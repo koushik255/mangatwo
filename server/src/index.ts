@@ -19,7 +19,7 @@ const app = new Elysia()
     return getPage(volume, page);
   })
   .post("/api/scan", () => scanManga())
-  .get("/", () => html)
+  .get("/", () => new Response(html, { headers: { "Content-Type": "text/html" } }))
   .listen(PORT);
 
 console.log(`Server running at http://localhost:${PORT}`);

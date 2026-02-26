@@ -26,7 +26,7 @@ export function scanManga() {
     }
 
     const files = readdirSync(imagesDir)
-      .filter((f) => f.endsWith(".webp"))
+      .filter((f) => /\.(webp|png|jpg|jpeg)$/i.test(f))
       .sort((a, b) => {
         const numA = parseInt(a.match(/\d+/g)?.pop() || "0");
         const numB = parseInt(b.match(/\d+/g)?.pop() || "0");
@@ -34,7 +34,7 @@ export function scanManga() {
       });
 
     if (files.length === 0) {
-      console.log(`Skipping ${volume.name}: no webp files`);
+      console.log(`Skipping ${volume.name}: no image files`);
       continue;
     }
 
